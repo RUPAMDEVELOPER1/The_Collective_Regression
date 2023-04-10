@@ -30,14 +30,24 @@ public class TestBase {
 		
 		if(driver == null)
 		{
-			if(browser.equalsIgnoreCase("chrome"))
+			if(browser.equalsIgnoreCase("macchrome"))
 			{
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//src//test//resources//chromedriver");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"src/test/resources/windowschromedriver/chromedriver.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--remote-allow-origins=*");
 				options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);// driver gets the life
 			}
+			else if(browser.equalsIgnoreCase("windowchrome"))
+			{
+				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"src/test/resources/windowschromedriver/chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--remote-allow-origins=*");
+				options.addArguments("--disable-notifications");
+				driver = new ChromeDriver(options);// driver gets the life
+				driver.manage().window().maximize();
+			}
+
 			if(browser.equalsIgnoreCase("firefox"))
 			{
 				System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"//src//test//resources//");
@@ -46,6 +56,7 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get(url);
 		}
+
 		
 		return driver;
 		

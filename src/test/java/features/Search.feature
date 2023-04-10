@@ -1,3 +1,4 @@
+@Search
 Feature: Search
   Scenario Outline: search and add to bag and verify count changing
   When i search as '<Searchitem>'
