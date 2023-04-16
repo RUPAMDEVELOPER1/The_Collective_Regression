@@ -52,4 +52,15 @@ public class SearchStepDefiniton {
         Thread.sleep(2000);
        testContextSetup.genericUtils.verifyCopiedCountIsNotSame();
     }
+    @When("^i send mail with messege to someone$")
+    public void i_send_mail_with_messege_to_someone() throws Throwable {
+        //testContextSetup.genericUtils.SendMailWithMessege("hello i am automation mail","Hii i have completed ");
+        testContextSetup.genericUtils.sendMailWithAttatchment("hello","sending with attatchment","/Users/rupamsethi/Downloads/rupam.xlsx");
+    }
+
+    @When("^i check broken link for '(.+)' then i send the mail$")
+    public void i_check_broken_link_for_then_i_send_the_mail(String brandurl) throws Throwable {
+        testContextSetup.genericUtils.checkBrokenLinkAndSendEmail(brandurl);
+    }
+
 }

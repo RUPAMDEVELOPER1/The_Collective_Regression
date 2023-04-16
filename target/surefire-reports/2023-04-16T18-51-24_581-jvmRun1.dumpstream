@@ -1,0 +1,26 @@
+# Created at 2023-04-16T18:52:28.946
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: EXIT
+java.io.EOFException
+	at org.apache.maven.surefire.booter.spi.LegacyMasterProcessChannelDecoder.decode(LegacyMasterProcessChannelDecoder.java:135)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:343)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+
+# Created at 2023-04-16T18:52:28.954
+ForkStarter IOException: Stream closed.
+java.io.IOException: Stream closed
+	at java.base/java.lang.ProcessBuilder$NullOutputStream.write(ProcessBuilder.java:445)
+	at java.base/java.io.OutputStream.write(OutputStream.java:164)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:125)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:251)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:245)
+	at java.base/java.io.BufferedOutputStream.implFlush(BufferedOutputStream.java:252)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:239)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:182)
+	at org.apache.maven.surefire.api.util.internal.Channels$4.closeImpl(Channels.java:246)
+	at org.apache.maven.surefire.api.util.internal.AbstractNoninterruptibleWritableChannel.close(AbstractNoninterruptibleWritableChannel.java:95)
+	at org.apache.maven.surefire.extensions.util.CommandlineStreams.close(CommandlineStreams.java:82)
+	at org.apache.maven.plugin.surefire.booterclient.ForkStarter$CloseableCloser.run(ForkStarter.java:197)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+
