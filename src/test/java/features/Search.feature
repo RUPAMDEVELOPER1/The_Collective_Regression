@@ -29,4 +29,13 @@ Feature: Search
     | https://vanheusenindia.abfrl.in/ |  |
 
 
+  @Search001
+  Scenario Outline: search and verify
+    When i search as '<Searchitem>'
+    Then i click on random product
+    Examples:
+      | Searchitem |
+     |shirts      |
+
+
 
