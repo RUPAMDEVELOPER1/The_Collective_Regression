@@ -30,28 +30,41 @@ public class TestBase {
 		
 		if(driver == null)
 		{
-			if(browser.equalsIgnoreCase("chrome"))
+			if(browser.equalsIgnoreCase("macchrome"))
 			{
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//src//test//resources//chromedriver");
+		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/resources/macchromedriver/chromedriver");
 				ChromeOptions options = new ChromeOptions();
 				options.addArguments("--remote-allow-origins=*");
 				options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);// driver gets the life
+
 			}
+			else if(browser.equalsIgnoreCase("windowchrome"))
+			{
+				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"/src/test/resources/windowschromedriver/chromedriver.exe");
+				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--remote-allow-origins=*");
+				options.addArguments("--disable-notifications");
+				driver = new ChromeDriver(options);// driver gets the life
+				driver.manage().window().maximize();
+			}
+
 			if(browser.equalsIgnoreCase("firefox"))
 			{
 				System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"//src//test//resources//");
 				driver = new FirefoxDriver();
 			}
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+			driver.manage().window().maximize();
 		driver.get(url);
 		}
+
 		
 		return driver;
 		
 	}
 	
-	
+	///Users/rupamsethi/Downloads/CucumberFramework 2/src/test/resources/macchromedriver/chromedriver
 	
 }
 

@@ -69,9 +69,18 @@
     <artifactId>selenium-java</artifactId>
     <version>4.1.1</version>
 </dependency>
+      <dependency>
+          <groupId>com.thegoate</groupId>
+          <artifactId>restassured</artifactId>
+          <version>0.15.17.202302242243</version>
+      </dependency>
+      <dependency>
+          <groupId>com.github.ivanovvlad9626</groupId>
+          <artifactId>TestRail-RestAssured</artifactId>
+          <version>0.5</version>
+      </dependency>
 
 
-   
   </dependencies>
 
   <build>

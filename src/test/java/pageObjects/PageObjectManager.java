@@ -8,6 +8,8 @@ public class PageObjectManager {
 	public WebDriver driver;
 
 	public SeachPage seachPage;
+
+	public ShoppingCartpage shoppingCartpage;
 	
 	public PageObjectManager(WebDriver driver)
 	{
@@ -22,4 +24,9 @@ public class PageObjectManager {
 		return seachPage;
 
 	}
+	public ShoppingCartpage getShoppingCartpage(){
+		shoppingCartpage = new ShoppingCartpage(driver);
+		return shoppingCartpage;
+	}
+
 }
