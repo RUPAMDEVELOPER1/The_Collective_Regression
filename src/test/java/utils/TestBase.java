@@ -55,7 +55,7 @@ public class TestBase {
 				driver = new FirefoxDriver();
 			}
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-			driver.manage().window().maximize();
+		driver.manage().window().maximize();
 		driver.get(url);
 		}
 
